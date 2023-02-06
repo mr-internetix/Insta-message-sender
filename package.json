@@ -1,0 +1,30 @@
+{
+  "name": "insta-message-sender",
+  "version": "1.0.0",
+  "description": "send messages automatically overon insta over server ",
+  "main": "inx.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon index.js",
+    "start" :"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mr-internetix/Insta-message-sender.git"
+  },
+  "keywords": [
+    "puppeteer",
+    "cronjob"
+  ],
+  "author": "mr_internetix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mr-internetix/Insta-message-sender/issues"
+  },
+  "homepage": "https://github.com/mr-internetix/Insta-message-sender#readme",
+  "dependencies": {
+    "node-cron": "^3.0.2",
+    "nodemon": "^2.0.20",
+    "puppeteer": "^19.6.3"
+  }
+}
