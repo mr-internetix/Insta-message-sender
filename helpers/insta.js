@@ -1,6 +1,6 @@
-const puppeteer = require("puppeteer");
+import puppeteer from "puppeteer";
 
-const Login_To_Insta = async (email, password) => {
+export const Login_To_Insta = async (username, password) => {
   // initialize  browser
 
   const browser = await puppeteer.launch({
@@ -11,11 +11,14 @@ const Login_To_Insta = async (email, password) => {
 
   const page = await browser.newPage();
 
+  // goto to instagram
+  await page.goto("https://www.instagram.com");
+
   Promise.all([
-    // goto new page
-    await page.goto("https://www.instagram.com"),
+    await page.waitForSelector('input[name="username"]'),
+
     // username
-    await page.type('input[name="username"]', email, { delay: 5 }),
+    await page.type('input[name="username"]', username, { delay: 5 }),
     // await page.type("#username", process.env.Email),
     //await page.type('#username',credentials.email),
 
@@ -30,5 +33,3 @@ const Login_To_Insta = async (email, password) => {
     await page.waitForNavigation(),
   ]);
 };
-
-module.exports = Login_To_Insta;

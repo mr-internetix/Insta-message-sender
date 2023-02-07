@@ -1,4 +1,4 @@
-const cron = require("node-cron");
+import * as cron from "node-cron";
 
 const RunEveryDay = () => {
   cron.schedule(
@@ -17,4 +17,4 @@ const RunEveryDay = () => {
   );
 };
 
-module.exports = RunEveryDay;
+export default RunEveryDay;
