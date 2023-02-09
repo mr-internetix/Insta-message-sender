@@ -6,4 +6,4 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 // calling function to login to insta
-Login_To_Insta(process.env.username, process.env.password);
+Login_To_Insta(process.env.instausername, process.env.password);
