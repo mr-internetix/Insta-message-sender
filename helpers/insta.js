@@ -41,5 +41,27 @@ export const Login_To_Insta = async (page, username, password) => {
 };
 
 export const Search_Profile = async (page, username) => {
-  console.log("searching profile");
+  // goto to user's page
+  await page.goto(`https://www.instagram.com/${username}`);
+
+  // wait for navigation
+  await page.waitForNavigation();
+
+  // click on message
+  let message_btn = (
+    await page.$xx('//div[@role="button"][contains(text(),"Message")]')
+  )[0];
+  // await message_btn.click();
+  console.log(message_btn);
+
+  // wait for navigation
+  await page.waitForNavigation();
+
+  //typing message
+
+  let message_box = await page.$x("//textarea[placeholder='Message...']");
+  await message_box.type("Hi i am Bot ! wanna be my friend", { delay: 5 });
+
+  // presing enter
+  await page.keyboard.press("Enter", { delay: 5 });
 };
