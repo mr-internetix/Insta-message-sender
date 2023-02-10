@@ -1,9 +1,20 @@
 // login function import
-import { Login_To_Insta } from "./helpers/insta.js";
+import { Login_To_Insta, Search_Profile } from "./helpers/insta.js";
+import { initialize_browser } from "./helpers/puppeteerConfig.js";
 
 // dot configs
 import * as dotenv from "dotenv";
 dotenv.config();
 
-// calling function to login to insta
-Login_To_Insta(process.env.instausername, process.env.password);
+const Run_Bot = async (user_name, password, target_profile) => {
+  // starting browser and initailizing page
+  let page = await initialize_browser();
+
+  // calling function to login to insta
+  await Login_To_Insta(page, user_name, password);
+
+  // Searching profile
+  await Search_Profile(page, target_profile);
+};
+
+Run_Bot(process.env.instausername, process.env.password, "rakshanda");
