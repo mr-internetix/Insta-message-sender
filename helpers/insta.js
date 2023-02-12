@@ -45,21 +45,23 @@ export const Search_Profile = async (page, username) => {
   await page.goto(`https://www.instagram.com/${username}`);
 
   // wait for navigation
-  await page.waitForNavigation();
+  // await page.waitForNavigation();
 
   // click on message
-  let message_btn = (
-    await page.$xx('//div[@role="button"][contains(text(),"Message")]')
-  )[0];
-  // await message_btn.click();
-  console.log(message_btn);
+  // page.waitForSelector("div > ._ab9s");
+  (
+    await page.waitForSelector(
+      'xpath///div[@role="button"][contains(text(),"Message")]'
+    )
+  ).click();
 
   // wait for navigation
   await page.waitForNavigation();
 
   //typing message
-
-  let message_box = await page.$x("//textarea[placeholder='Message...']");
+  let message_box = await page.waitForSelector(
+    'xpath///textarea[@placeholder="Message..."]'
+  );
   await message_box.type("Hi i am Bot ! wanna be my friend", { delay: 5 });
 
   // presing enter
