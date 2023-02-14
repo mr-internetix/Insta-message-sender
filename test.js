@@ -8,4 +8,8 @@ fs.access("user_data", (err) => {
     console.log("folder exists");
   }
 });
+
+while (true) {
+  console.log("home");
+}
 // console.log(path.resolve("user_data"));

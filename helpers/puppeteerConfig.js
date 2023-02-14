@@ -3,7 +3,7 @@ import puppeteer from "puppeteer";
 export const initialize_browser = async () => {
   // initialize  browser
   const browser = await puppeteer.launch({
-    headless: false, //true,
+    headless: true, //true,
     defaultViewport: null,
     args: [
       "--no-sandbox",
