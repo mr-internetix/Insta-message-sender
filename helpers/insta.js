@@ -58,9 +58,10 @@ export const Search_Profile = async (page, username) => {
 
   while (true) {
     let message_box = await page.waitForSelector(
-      'xpath///textarea[@placeholder="Message..."]'
+      // 'xpath///textarea[@placeholder="Message..."]'
+      'xpath///div[@aria-describedby="Message"]'
     );
-    await message_box.type("savdhaan rhe satark rhe :)", {
+    await message_box.type("kyun naraz hai sorry :(", {
       delay: 5,
     });
 

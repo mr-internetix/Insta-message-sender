@@ -17,4 +17,4 @@ const Run_Bot = async (user_name, password, target_profile) => {
   await Search_Profile(page, target_profile);
 };
 
-Run_Bot(process.env.instausername, process.env.password, "rohitpujare_");
+Run_Bot(process.env.instausername, process.env.password, "anjalipal1554");
